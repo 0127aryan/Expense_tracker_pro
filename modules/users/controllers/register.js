@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
 
 const register = async(req, res) => {
 
@@ -18,6 +19,8 @@ const getDuplicateEmail = await usersModel.findOne({
     email: email,
 });
 if(getDuplicateEmail) throw "This email already exists!";
+
+const hashedPassword = await bcrypt.hash(password, 12);
 
 await usersModel.create({
     name: name,
