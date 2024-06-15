@@ -25,7 +25,7 @@ const hashedPassword = await bcrypt.hash(password, 12);
 await usersModel.create({
     name: name,
     email: email,
-    password: password,
+    password: hashedPassword,
     balance: balance,
 })
 
