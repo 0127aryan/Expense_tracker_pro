@@ -20,9 +20,12 @@ password:{
 balance:{
     type: Number,
     required: [true, "Balance is required!"],
-    default: 0 
+    default: 0,
 },
 
+},
+{
+    timestamps: true,
 });
 
 
