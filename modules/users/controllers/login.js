@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
-const jsonwebtoken = require("jsonwebtoken")
+const jsonwebtoken = require("jsonwebtoken");
+const jwtManager = require("../../../managers/jwtManager");
 
 
 const login = async (req, res) => {
@@ -19,12 +20,9 @@ const login = async (req, res) => {
 
     if(!comparePassword) throw " Email Password do not match";
 
-   const accessToken = await jsonwebtoken.sign({
-    _id: getUser._id,
-    name: getUser.name,
-}, 
-process.env.jwt_salt
-);
+   const accessToken = jwtManager(getUser);
+
+
 
 
     //success response
