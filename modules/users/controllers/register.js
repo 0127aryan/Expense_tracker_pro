@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const jsonwebtoken = require("jsonwebtoken");
-const jwtManager = require("../../../managers/jwtManager");
+const emailmanager = require("../../../managers/emailmanager");
 
 const register = async(req, res) => {
 
@@ -31,6 +31,8 @@ const createdUser = await usersModel.create({
     balance: balance,
 })
 const accessToken = jwtManager(createdUser);
+
+  await emailmanager(createdUser.email, "Welcome to expense tracker pro. We hope you can manage your expenses easily on our platform","<h1> Welcome to expense Tracker peo,</h1><br/><br/> We hope you can manage you expenses using our tool","welcome to expense Tracker Pro!")
 
 res.status(201).json({
     status:"User registered Successfully",
