@@ -2,8 +2,6 @@
 
 Welcome to Expense Tracker Pro, your ultimate solution for managing personal finances effectively. This application is designed to help you keep track of your expenses and income with ease, providing insightful data visualizations to help you make better financial decisions.
 
-![Expense Tracker Pro](https://via.placeholder.com/800x200.png?text=Expense+Tracker+Pro)
-
 ## 🚀 Features
 
 - **Expense Tracking**: Effortlessly log daily expenses with detailed descriptions.
